@@ -1,0 +1,17 @@
+get:
+  tags:
+    - Product
+  description: Returns products which belong to given user
+  parameters:
+    - name: owner_email
+      in: path
+      description: Email of user
+      type: string
+      required: true
+  responses:
+    "200":
+      description: List of products
+      content:
+        application/json:
+          schema:
+            $ref: schema/product_definition.yaml      

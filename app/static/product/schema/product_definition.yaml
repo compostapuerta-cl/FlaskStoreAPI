@@ -1,0 +1,15 @@
+type: object
+properties:
+  id: {type: number} 
+  name: {type: string} 
+  products: 
+    type: object
+    properties:
+      name: {type: string}
+      price: {type: number}
+      units: {type: number}
+      owner:
+        type: object
+        properties:
+          email: {type: string}
+          name: {type: string}

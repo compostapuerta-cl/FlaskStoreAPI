@@ -1,0 +1,17 @@
+get:
+  tags:
+    - Product
+  description: Returns products within given category
+  parameters:
+    - name: category
+      in: path
+      description: Name of Category
+      type: string
+      required: true
+  responses:
+    "200":
+      description: List of products
+      content:
+        application/json:
+          schema:
+            $ref: schema/product_definition.yaml  

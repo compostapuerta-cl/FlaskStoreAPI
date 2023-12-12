@@ -1,0 +1,11 @@
+get:
+  tags:
+    - Product
+  description: Returns all products grouped by category
+  responses:
+    "200":
+      description: List of products grouped by category
+      content:
+        application/json:
+          schema:
+            $ref: schema/product_definition.yaml

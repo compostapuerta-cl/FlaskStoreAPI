@@ -1,0 +1,17 @@
+get:
+  tags:
+    - User
+  description: Returns all database users
+  parameters:
+    - name: term
+      in: query
+      description: Expression to search users
+      type: string
+      required: false
+  responses:
+    "200":
+      description: List of users
+      content:
+        application/json:
+          schema:
+            $ref: schema/user_definition.yaml

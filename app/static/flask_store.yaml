@@ -1,0 +1,26 @@
+openapi: 3.0.0
+info:
+  title: FlaskStore-API
+  version: 1.0.0
+  description: A little store API running in Flask
+tags: 
+  - name: User
+    description: Users API
+  - name: Product
+    description: Products API
+
+paths:
+  /user:
+    $ref: user/user.yaml
+  /users:
+    $ref: user/users.yaml
+  /user/{user_email}:
+    $ref: user/user_by_email.yaml
+  /product/{category}:
+    $ref: product/product.yaml
+  /products:
+    $ref: product/products.yaml
+  /products/category/{category}:
+    $ref: product/products_category.yaml
+  /products/owner/{owner_email}:
+    $ref: product/products_owner.yaml

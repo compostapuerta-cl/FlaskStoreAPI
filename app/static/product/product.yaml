@@ -1,0 +1,61 @@
+post:
+  tags:
+    - Product
+  description: Inserts into database a new product
+  produces:
+    - application/json
+  parameters:
+    - name: category
+      in: path
+      description: Name of Category
+      type: string
+      required: true
+  requestBody:
+    content:
+      application/json:
+        summary: New product
+        schema:
+          $ref: schema/product_request.yaml 
+  responses:
+    "200":
+      description: Product
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Product **** has been created successfully
+delete:
+  tags:
+    - Product
+  description: Deletes product
+  produces:
+    - application/json
+  parameters:
+    - name: category
+      in: path
+      description: Name of Category where is the Product to delete
+      type: string
+      required: true
+  requestBody:
+    content:
+      application/json:
+        summary: Product name
+        schema:
+          type: object
+          properties:
+            product_name:
+              type: string
+  responses:
+    "200":
+      description: Product
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Succesful delete

@@ -1,0 +1,23 @@
+post:
+  tags:
+    - User
+  description: Inserts into database a new user
+  produces:
+    - application/json
+  requestBody:
+    content:
+      application/json:
+        summary: New user
+        schema:
+          $ref: schema/user_request.yaml 
+  responses:
+    "200":
+      description: User
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: User **** has been created successfully

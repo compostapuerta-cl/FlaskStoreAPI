@@ -1,0 +1,40 @@
+get:
+  tags:
+    - User
+  description: Returns selected database user
+  parameters:
+    - name: user_email
+      in: path
+      description: Name of User
+      type: string
+      required: true
+  responses:
+    "200":
+      description: List of users
+      content:
+        application/json:
+          schema:
+            $ref: schema/user_definition.yaml
+delete:
+  tags:
+    - User
+  description: Deletes user
+  produces:
+    - application/json
+  parameters:
+    - name: user_email
+      in: path
+      description: Email of user to delete
+      type: string
+      required: true
+  responses:
+    "200":
+      description: Product
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                example: Succesful delete
